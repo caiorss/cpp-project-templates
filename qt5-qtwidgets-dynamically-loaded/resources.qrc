@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/assets">
+        <file>user_interface.ui</file>
+    </qresource>
+</RCC>
