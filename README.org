@@ -1,0 +1,30 @@
+* C++ CMake (+) Conan Project Templates 
+
+This project many C++ CMake and Conan project templates which can make
+easier for creating new projects instead of starting everything from
+scratch. 
+
+  *Project Templates Provided:* 
+
+  + Basic OpenGL Project
+    + Directory: [[file:basic-opengl-project][file:basic-opengl-project]]
+    + Description: Minimal OpenGL project with CMake. 
+
+  + Qt5 Widgets + Dynamically Loaded Form
+    + Directory:  [[file:qt5-qtwidgets-dynamically-loaded][file:qt5-qtwidgets-dynamically-loaded]]
+    + Description: Sample project with Qt5 Widgets dynamically
+      loaded. It doesn't not use code generation from the form file,
+      instead it loads the form file from the compiled resource at
+      runtime. This approach is similar to use QML for describing the
+      UI, but unlike QML, the control logic is entirely in C++. 
+
+  + Qt5 QtQuick QML
+    + Directory:  [[file:qt5-qtquick-qml][file:qt5-qtquick-qml]]
+    + Description: Basic Q5/QML project with CMake.
+ 
+  *Usage:* 
+
+Just copy the project template directory to a new location, open it in
+any IDE which supports CMake, namely, Clion, Visual Studio, QTCreator
+or KDevelop, and modify it.
+

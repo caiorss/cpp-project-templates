@@ -1,3 +1,9 @@
+/*  Caio Rodrigues - caiorss - at - rodrigues - at gmail - dot - com 
+ *  
+ * Description: Project template for a QT5 Widget application with
+ *              dynamically loaded forms.
+ ********************************************************/
+
 #include <iostream>
 #include <iomanip>
 #include <functional>
