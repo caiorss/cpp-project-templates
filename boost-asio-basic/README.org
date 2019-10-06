@@ -1,0 +1,18 @@
+* Basic Boost Asio Server
+
+Test the server with netcat: 
+
+#+BEGIN_SRC sh 
+  $ nc -v localhost 9078
+  Ncat: Version 7.60 ( https://nmap.org/ncat )
+  Ncat: Connection to ::1 failed: Connection refused.
+  Ncat: Trying next address...
+  Ncat: Connected to 127.0.0.1:9078.
+
+   ECHO => 
+  hello world
+   ECHO => hello world
+  C++17 echo server Boost.Asio
+   ECHO => C++17 echo server Boost.Asio
+  quit
+#+END_SRC

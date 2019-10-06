@@ -10,6 +10,10 @@ scratch.
     + Directory: [[file:basic-opengl-project][file:basic-opengl-project]]
     + Description: Minimal OpenGL project with CMake. 
 
+  + Boost Asio Project 
+    + Directory: [[file:boost-asio-basic][file:boost-asio-basic]]
+    + Description: Minimal [[https://www.boost.org/doc/libs/1_71_0/doc/html/boost_asio.html][Boost.Asio]] project.
+
   + Qt5 Widgets + Dynamically Loaded Form
     + Directory:  [[file:qt5-qtwidgets-dynamically-loaded][file:qt5-qtwidgets-dynamically-loaded]]
     + Description: Sample project with Qt5 Widgets dynamically
@@ -60,6 +64,8 @@ Example:
  + 3 => Or compile and build from command line. 
 
 #+BEGIN_SRC sh 
+  $ cd my-opengl1-project 
+
   $ cmake -H. -B_build -G Ninja -DCMAKE_BUILD_TYPE=Release
 
   $ cmake --build _build --target 
