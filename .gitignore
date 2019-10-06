@@ -1,0 +1,12 @@
+*.bin
+*.dll
+*.exe
+*.so
+*.dylib
+*.user
+.vscode/*
+gdb.txt
+build/*
+*.tar.gz
+*.tgz
+*.zip
