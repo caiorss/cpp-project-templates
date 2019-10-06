@@ -28,3 +28,47 @@ Just copy the project template directory to a new location, open it in
 any IDE which supports CMake, namely, Clion, Visual Studio, QTCreator
 or KDevelop, and modify it.
 
+Example: 
+
+ + 1 => Clone the repository: 
+
+#+BEGIN_SRC sh 
+  $ mkdir -p /tmp/temp && cd /tmp/temp
+  $ git clone https://github.com/caiorss/cpp-project-templates
+#+END_SRC
+
+ + 2 => Copy the project template directory.
+
+#+BEGIN_SRC sh 
+  # Create my-opengll-project from template: 
+  $ cp -rv cpp-project-templates/basic-opengl-project my-opengl-project
+  'cpp-project-templates/basic-opengl-project' -> 'my-opengl-project'
+  'cpp-project-templates/basic-opengl-project/CMakeLists.txt' -> 'my-opengl-project/CMakeLists.txt'
+  'cpp-project-templates/basic-opengl-project/README.org' -> 'my-opengl-project/README.org'
+  'cpp-project-templates/basic-opengl-project/opengl1.cpp' -> 'my-opengl-project/opengl1.cpp'
+#+END_SRC
+
+ + 3 => Open the project with Visual Studio, QTCreator, CLion,
+   KDevelop or any other supported IDE. Or generate the IDE-specific
+   configuration files with CMake. 
+
+#+BEGIN_SRC sh 
+  # Edit the new project with CMake
+  $ qtcreator my-opengl-project/CMakeLists.txt &
+#+END_SRC
+
+ + 3 => Or compile and build from command line. 
+
+#+BEGIN_SRC sh 
+  $ cmake -H. -B_build -G Ninja -DCMAKE_BUILD_TYPE=Release
+
+  $ cmake --build _build --target 
+ [2/2] Linking CXX executable openglDemo1.bin
+
+ # Run program: 
+ $ _build/openglDemo1.bin 
+#+END_SRC
+
+ *Repository* 
+ 
+ + https://github.com/caiorss/cpp-project-templates
