@@ -6,13 +6,31 @@ scratch.
 
   *Project Templates Provided:* 
 
+Basic CMake Projects: 
+
+  + Basic CMake Project with 2 executables.
+    + Directory: [[file:basic-cmake-project][file:basic-cmake-project]]
+
+OpenGL / Computer Graphics 
+
   + Basic OpenGL Project
     + Directory: [[file:basic-opengl-project][file:basic-opengl-project]]
     + Description: Minimal OpenGL project with CMake. 
 
+Boost Libraries / ASIO - Asynchrnous IO Framework 
+
   + Boost Asio Project 
     + Directory: [[file:boost-asio-basic][file:boost-asio-basic]]
     + Description: Minimal [[https://www.boost.org/doc/libs/1_71_0/doc/html/boost_asio.html][Boost.Asio]] project.
+
+Pybind11 
+ 
+  + Python Pybind11 native module.
+    + Directory:  [[file:python-module-pybind11][file:python-module-pybind11]]
+    + Note a Python native module is a shared library  - aka *.pyd
+      (DLL) or *.so on Windows.
+
+QT Cross Platform - Graphical User Interface Framework
 
   + Qt5 Widgets + Dynamically Loaded Form
     + Directory:  [[file:qt5-qtwidgets-dynamically-loaded][file:qt5-qtwidgets-dynamically-loaded]]

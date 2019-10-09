@@ -1,0 +1,299 @@
+# .GITINGORE for C or C++ Projects Based on the following sources;
+#
+#   Yoshua / .gitignore for C/C++ developers.
+#    + https://gist.github.com/Yousha/3830712334ac30a90eb6041b932b68d7
+#
+#   Github: 
+#    + https://github.com/github/gitignore/blob/master/C%2B%2B.gitignore
+#
+#   Stuhacking
+#    + https://gist.github.com/stuhacking/4240230479dbfc8d9bb8b2e4099f38c7
+#
+
+#======== Common Directories with Object-code =========#
+#---------------------------------------------------------
+bin/*
+build/*
+/External/
+/Debug/
+/Docs/
+/Release/
+/build/
+/bin/
+/out/
+/cmake-build-*/
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# ======= Object Code ===================================#
+#---------------------------------------------------------
+
+# Executables 
+*.bin
+*.exe 
+*.out
+*.app 
+
+# Shared libraries 
+*.dll
+*.so
+*.dylib
+*.pyd 
+
+# Intermediate object code
+*.o
+*.obj 
+*.slo
+*.lo
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled static libraries 
+*.lai
+*.la
+*.a
+*.lib 
+
+#  Binary Archive Files 
+#-------------------------------------------------------
+*.zip
+*.tgz 
+*.tar.gz
+*.unrar 
+
+#  Visual Studio MSVC - Microsft Visual C++ Object Codes
+#---------------------------------------------------------
+*.ilk
+*.obj
+*.pch 
+*.pdb
+*.ipdb
+*.pgd
+*.rsp
+*.sbr
+*.tli
+*.tlh
+*.tmp
+*.tmp_proj
+*.vspscc
+*.builds
+ipch/
+*.aps
+*.ncb
+*.opendb
+*.cachefile
+*.VC.db
+*.VC.VC.opendb
+*.vsp
+*.psses
+*.vspx
+*.sap  
+*.e2e 
+
+
+#===== TOols and IDE Configuration File  =======#
+#---------------------------------------------------------
+
+
+# ---------  CMake ----------------------#
+CMakeCache.txt
+CMakeFiles
+CMakeScripts
+Makefile
+cmake_install.cmake
+install_manifest.txt
+
+#----------- QTCreator ----------------------#
+
+# QTCreator configuration file (CMakeLists.txt.user)
+*.txt.user 
+
+#--------- Clion / InteliJ IDE ------------------------------#
+
+# User-specific stuff:
+.idea/workspace.xml
+.idea/tasks.xml
+
+# Sensitive or high-churn files:
+.idea/dataSources/
+.idea/dataSources.ids
+.idea/dataSources.xml
+.idea/dataSources.local.xml
+.idea/sqlDataSources.xml
+.idea/dynamic.xml
+.idea/uiDesigner.xml
+
+# Gradle:
+.idea/gradle.xml
+.idea/libraries
+
+# Mongo Explorer plugin:
+.idea/mongoSettings.xml
+
+#----- Visua Studio Code Editor ----------------#
+
+# Visual Studio Code config
+.vscode/* 
+
+#------ Visual Studio IDE ------------------------#
+
+# Visual Studio 2015/2017 cache/options directory
+.vs/*              
+
+# Visual Studio 2017 auto generated files
+Generated\ Files/  
+
+# MSTest test Results 
+[Tt]est[Rr]esult*/ 
+[Bb]uild[Ll]og.*   
+
+# NUNIT
+*.VisualState.xml  
+TestResult.xml     
+
+# Build Results of an ATL Project
+[Dd]ebugPS/        
+[Rr]eleasePS/      
+
+# Build Results of an ATL Project
+dlldata.c          
+
+# Benchmark Results
+BenchmarkDotNet.Artifacts/
+
+# JustCode is a .NET coding add-in
+.JustCode
+
+# TeamCity is a build add-in
+_TeamCity*
+
+# DotCover is a Code Coverage Tool
+*.dotCover
+
+# AxoCover is a Code Coverage Tool
+.axoCover/*
+!.axoCover/settings.json
+
+# Visual Studio code coverage results
+*.coverage
+*.coveragexml
+
+# NCrunch
+_NCrunch_*
+.*crunch*.local.xml
+nCrunchTemp_*
+
+# MightyMoose
+*.mm.*
+AutoTest.Net/
+
+# Web workbench (sass)
+.sass-cache/
+
+# Installshield output folder
+[Ee]xpress/
+
+# DocProject is a documentation generator add-in
+DocProject/buildhelp/
+DocProject/Help/*.HxT
+DocProject/Help/*.HxC
+DocProject/Help/*.hhc
+DocProject/Help/*.hhk
+DocProject/Help/*.hhp
+DocProject/Help/Html2
+DocProject/Help/html
+
+# Click-Once directory
+publish/
+
+# Publish Web Output
+*.[Pp]ublish.xml
+*.azurePubxml
+# Note: Comment the next line if you want to checkin your web deploy settings,
+# but database connection strings (with potential passwords) will be unencrypted
+*.pubxml
+*.publishproj
+
+# Microsoft Azure Web App publish settings. Comment the next line if you want to
+# checkin your Azure Web App publish settings, but sensitive information contained
+# in these scripts will be unencrypted
+PublishScripts/
+
+# NuGet Packages
+*.nupkg
+# The packages folder can be ignored because of Package Restore
+**/[Pp]ackages/*
+# except build/, which is used as an MSBuild target.
+!**/[Pp]ackages/build/
+# Uncomment if necessary however generally it will be regenerated when needed
+#!**/[Pp]ackages/repositories.config
+# NuGet v3's project.json files produces more ignorable files
+*.nuget.props
+*.nuget.targets
+
+# Microsoft Azure Build Output
+csx/
+*.build.csdef
+
+# Microsoft Azure Emulator
+ecf/
+rcf/
+
+# Windows Store app package directories and files
+AppPackages/
+BundleArtifacts/
+Package.StoreAssociation.xml
+_pkginfo.txt
+*.appx
+
+# Visual Studio cache files
+# files ending in .cache can be ignored
+*.[Cc]ache
+# but keep track of directories ending in .cache
+!?*.[Cc]ache/
+
+# Others
+ClientBin/
+~$*
+*~
+*.dbmdl
+*.dbproj.schemaview
+*.jfm
+*.pfx
+*.publishsettings
+orleans.codegen.cs
+
+# Including strong name files can present a security risk
+# (https://github.com/github/gitignore/pull/2483#issue-259490424)
+#*.snk
+
+# Since there are multiple workflows, uncomment next line to ignore bower_components
+# (https://github.com/github/gitignore/pull/1529#issuecomment-104372622)
+#bower_components/
+# ASP.NET Core default setup: bower directory is configured as wwwroot/lib/ and bower restore is true
+**/wwwroot/lib/
+
+# RIA/Silverlight projects
+Generated_Code/
+
+# Backup & report files from converting an old project file
+# to a newer Visual Studio version. Backup files are not needed,
+# because we have git ;-)
+_UpgradeReport_Files/
+Backup*/
+UpgradeLog*.XML
+UpgradeLog*.htm
+ServiceFabricBackup/
+*.rptproj.bak
+
+# SQL Server files
+*.mdf
+*.ldf
+*.ndf
+
