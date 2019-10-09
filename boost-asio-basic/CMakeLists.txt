@@ -1,3 +1,6 @@
+# Brief: CMakeLists.txt script for building Boost.ASIO projects. 
+#
+#-----------------------------------------------------------
 cmake_minimum_required(VERSION 3.5)
 project(basic_boost_asio_server LANGUAGES CXX)
 
@@ -8,6 +11,23 @@ set(CMAKE_VERBOSE_MAKEFILE ON)
 # Set this option to OFF in order to not use Conan
 # and use a locally installed Boost. 
 set(BUILD_WITH_CONAN ON)
+
+#========== Functions =======================================#
+
+# Copy target file to path ${CURRENT DIRECTORY}/bin whenever it is rebuilt.
+# It is easier to find and run executable targets from the command line.
+function(copy_after_build TARGET_NAME )
+    # Note: CMAKE_CURRENT_LIST_DIR is the directory where is this
+    # CMakeLists.txt file.
+    set(DESTDIR ${CMAKE_CURRENT_LIST_DIR}/bin/)
+    file(MAKE_DIRECTORY ${DESTDIR})
+    # Copy binary file to <CMakeLists.txt didctory>./bin
+    # after target is compiled.
+    add_custom_command(TARGET ${TARGET_NAME} POST_BUILD
+      COMMAND ${CMAKE_COMMAND} -E copy
+                               $<TARGET_FILE:${TARGET_NAME}> ${DESTDIR}
+                               )
+endfunction()
 
 
 #========= Conan Bootstrap ======================#
@@ -43,6 +63,7 @@ find_package(Boost COMPONENTS system coroutine REQUIRED)
 #========== Target Configurations ================#
 
 add_executable(echo-server echo-server.cpp)
+copy_after_build(echo-server)
 
 IF(NOT WIN32)
   # Linux, MacOSX, BSD and any other OS Unix-loke or OS with POSIX Threads
