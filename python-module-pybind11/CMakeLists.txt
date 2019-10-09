@@ -28,7 +28,7 @@ conan_cmake_run(REQUIRES      # List of dependencies
 
 #============ Additional Commands =============#
 
-# Copy target file to current directory whenerver it is rebuilt
+# Copy target file to current directory whenever it has been rebuilt.
 function(copy_after_build TARGET_NAME )
     # Note: CMAKE_CURRENT_LIST_DIR is the directory where is this
     # CMakeLists.txt file.
