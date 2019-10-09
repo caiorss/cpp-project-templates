@@ -42,7 +42,12 @@ find_package(Boost COMPONENTS system coroutine REQUIRED)
 
 #========== Target Configurations ================#
 
-
 add_executable(echo-server echo-server.cpp)
-target_link_libraries(echo-server Boost::system pthread)
 
+IF(NOT WIN32)
+  # Linux, MacOSX, BSD and any other OS Unix-loke or OS with POSIX Threads
+  target_link_libraries(echo-server Boost::system pthread)
+ELSE()
+  # Windows WIN32 API
+  target_link_libraries(echo-server Boost::system)
+ENDIF()
