@@ -44,7 +44,19 @@ QT Cross Platform - Graphical User Interface Framework
     + Directory:  [[file:qt5-qtquick-qml][file:qt5-qtquick-qml]]
     + Description: Basic Q5/QML project with CMake.
  
+WX Widgets - Cross Platform GUI Toolkit Library 
+
+  + Wxwidgets
+    + Directory: [[file:wxwidgets][file:wxwidgets]]
+    + Description: Sample CMake+Conan project with WxWidgets
+      containing two targets, a sample application with multiple files
+      and an application with a single file.
+    + Note: WxWidget has a more permissive license than QT for static
+      linking. However, it has a more scattered documentation and
+      lacks good *GUI designer* such as QTCreator. 
+
   *Usage:* 
+  
 
 Just copy the project template directory to a new location, open it in
 any IDE which supports CMake, namely, Clion, Visual Studio, QTCreator

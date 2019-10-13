@@ -1,0 +1,70 @@
+* Project Template for WxWidgets with Conan Package Manager 
+
+Note: The code for this project template was extracted from Code
+Blocks' WxWidgets project template.
+
+ *Features of WxWidgets* 
+
+   + Cross platform 
+
+   + Based on Microsoft MFC - Microsoft Foundation Classes
+
+   + More permissive license than QT for static linking.
+
+   + Fragmented documentation. 
+
+   + Many GUI builders / Designers that allows the user to build the
+     GUI visually by dragging and dropping widgets:
+     + http://codeblocks.org/
+     + http://wxformbuilder.org/
+     + http://codelite.org/
+     + http://wxglade.sourceforge.net/
+
+ *Conan WxWidgets Package* 
+
+  + [[https://github.com/bincrafters/conan-wxwidgets][GitHub - bincrafters/conan-wxwidgets: Conan recipe for wxWidgets library]]
+
+  + [[https://bintray.com/bincrafters/public-conan/wxwidgets%3Abincrafters/3.1.2%3Astable][Version wxwidgets:bincrafters/3.1.2:stable - bincrafters]]
+
+ *Building and running on Linux* 
+
+ + Build: 
+
+#+BEGIN_SRC sh 
+ $ make 
+#+END_SRC
+
+ + Run: If the compilation is successful, a graphical window will
+   appear.
+
+Run WxWidgets application with multiple files: 
+
+#+BEGIN_SRC sh 
+  $ bin/sampleApp 
+#+END_SRC
+
+Run single-file WxWdigets application: 
+
+#+BEGIN_SRC sh 
+  $ bin/singleFileApp  
+#+END_SRC
+
+ *See*: 
+
+  + [[https://wiki.wxwidgets.org/WxWidgets_Compared_To_Other_Toolkits][WxWidgets Compared To Other Toolkits - WxWiki]]
+
+  + [[https://docs.wxwidgets.org/3.0/index.html][wxWidgets: Documentation]]
+
+  + [[https://wiki.wxwidgets.org/Writing_Your_First_Application-Introduction][Writing Your First Application-Introduction - WxWiki]]
+
+  + [[https://wiki.wxwidgets.org/Tools][Tools - WxWiki]]
+
+  + [[https://www.codeproject.com/Articles/11515/Introduction-to-wxWidgets][Introduction to wxWidgets - CodeProject]]
+
+  + [[https://www.codeproject.com/Articles/803106/Introduction-to-wxWidgets-GUI-programming-with-wxS][Introduction to wxWidgets GUI programming with wxSmith - CodeProject]]
+
+  + [[http://wiki.codeblocks.org/index.php/WxSmith_tutorial:_Hello_world][WxSmith tutorial: Hello world - CodeBlocks]]
+
+  + [[https://www.meetingcpp.com/blog/items/say-hello-to-wxwidgets-3-0.html][Say hello to wxWidgets 3.0]]
+
+  + [[https://news.ycombinator.com/item?id=11202420][WxWidgets 3.1.0 Brings Better HiDPI Support, WxQt with Qt5 | Hacker News]]
