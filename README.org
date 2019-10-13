@@ -11,6 +11,13 @@ Basic CMake Projects:
   + Basic CMake Project with 2 executables.
     + Directory: [[file:basic-cmake-project][file:basic-cmake-project]]
 
+Command Line Application with Subcommands akin to GIT (CLI11 Library)
+
+   + CLI11 sample project
+     + Directory:  [[file:command-line-app-cli11][file:command-line-app-cli11]]
+     + Description: Command line application with multiple subcommands
+       akin to busybox or GIT (git commit, git log, git push, ...)
+
 OpenGL / Computer Graphics 
 
   + Basic OpenGL Project
