@@ -1,0 +1,148 @@
+* Project template for Command Line Application with CLI11 Library
+
+This is a project template for a command line application with
+subcommands, akin to GIT (git commit, git submodule, git push)  built
+[[https://github.com/CLIUtils/CLI11][CLI11]] C++11 library for command line parsing.
+
+ *Library CLI11* 
+
+  + Repository:
+    + https://github.com/CLIUtils/CLI11 
+
+  + Documentation:
+    + https://cliutils.github.io/CLI11/book/
+
+  + Conan Package:
+    + https://github.com/bincrafters/conan-cli11
+
+ *Building from command line on Linux*
+
+Build:
+
+#+BEGIN_SRC sh
+  $ make
+  cmake -B_build -H. -DCMAKE_BUILD_TYPE=Debug
+  [INFO] =>> Building with CONAN OK.
+  -- Conan: Automatic detection of conan settings from cmake
+  -- Conan: Settings= -s;build_type=Debug;-s;compiler=gcc;-s;compiler.version=8;-s;compiler.libcxx=libstdc++11
+  -- Conan executing: conan install . -s build_type=Debug -s compiler=gcc -s compiler.version=8 -s compiler.libcxx=libstdc++11 -g=cmake --build=missing
+  -- Configuration:
+  [settings]
+   ... .... ...  ... .... ...  ... .... ...  ... .... ...  ... .... ...
+#+END_SRC
+
+ Test the Application:
+
+ + Run without any argument:
+
+#+BEGIN_SRC sh
+  $ bin/cli-app
+  A subcommand is required
+  Run with --help for more information.
+#+END_SRC
+
+ + Show help.
+
+#+BEGIN_SRC sh
+  $ bin/cli-app -h
+  cli-app
+  Usage: bin/cli-app [OPTIONS] SUBCOMMAND
+
+  Options:
+    -h,--help                   Print this help message and exit
+
+  Subcommands:
+    run                         Run some application
+    path                        Show content of $PATH environment variable
+    relaunch-pid                Relaunch a process, given its PID
+
+   Command line application for managing processes and applications.
+#+END_SRC
+
+ + Run subcomamnd *path* for displaying all directories listed in the
+   PATH variable. 
+
+#+BEGIN_SRC sh 
+   #------- Show help -------------#
+   $ bin/cli-app path -h                                                                               
+   Show content of $PATH environment variable                                                          
+   Usage: bin/cli-app path [OPTIONS]                                                                   
+
+   Options:                                                                                            
+     -h,--help                   Print this help message and exit                                      
+
+    Command line application for managing processes and applications. 
+
+   #---------- Run Subcommand ------#
+   $ bin/cli-app path                                                                                  
+    [INFO] Subcommand PATH => Show all directories listed in $PATH                                     
+    environment variable    
+#+END_SRC 
+
+
+ + Run subcommand *run* for launching processes as daemons. 
+
+#+BEGIN_SRC sh
+  $ bin/cli-app run
+  <APPLICATION> is required
+  Run with --help for more information
+#+END_SRC
+
+ + Show help for subcommand run:
+
+#+BEGIN_SRC sh
+  $ bin/cli-app run -h
+  Run some application
+  Usage: bin/cli-app run [OPTIONS] <APPLICATION>
+
+  Positionals:
+    <APPLICATION> TEXT REQUIRED Application to be launched as daemon
+
+  Options:
+    -h,--help                   Print this help message and exit
+    -e,--exec                   Run application in the current terminal.
+    -d,--directory              Set process current directory
+
+   Command line application for managing processes and applications.
+#+END_SRC
+
+ + Run application as damon with *subcommand run*
+
+#+BEGIN_SRC sh
+  $ bin/cli-app run /path/to/server.bin.elfx86_64
+   [INFO] Running subcommand <<RUN>>
+    =>>                  Application  = /path/to/server.bin.elfx86_64
+    =>>          Run in terminal flag = false
+    =>>     Process current directory = .
+
+  $ bin/cli-app run /path/to/server.bin.elfx86_64 --directory=/var/www -e
+   [INFO] Running subcommand <<RUN>>
+    =>>                  Application  = /path/to/server.bin.elfx86_64
+    =>>          Run in terminal flag = true
+    =>>     Process current directory = /var/www
+
+
+  $ bin/cli-app run --directory=/var/www --exec /path/to/server.bin
+   [INFO] Running subcommand <<RUN>>
+    =>>                  Application  = /path/to/server.bin
+    =>>          Run in terminal flag = true
+    =>>     Process current directory = /var/www
+
+#+END_SRC
+
+ + Subcommand for a relauching process given its PID:
+
+#+BEGIN_SRC sh 
+  $ bin/cli-app relaunch-pid -h                                                                       
+  Relaunch a process, given its PID                                                                   
+  Usage: bin/cli-app relaunch-pid [OPTIONS] <PID>                                                     
+
+  Positionals:                                                                                        
+    <PID> INT REQUIRED          PID of application to be relaunched                                   
+
+  Options:                                                                                            
+    -h,--help                   Print this help message and exit                                      
+    -d,--directory TEXT         Current working directory.                                            
+
+   Command line application for managing processes and applications.
+#+END_SRC
