@@ -10,7 +10,7 @@ set(CMAKE_VERBOSE_MAKEFILE ON)
 
 # Set this option to OFF in order to not use Conan
 # and use a locally installed Boost. 
-set(BUILD_WITH_CONAN ON)
+set(BUILD_WITH_CONAN OFF)
 
 #========== Functions =======================================#
 
@@ -57,15 +57,29 @@ IF(BUILD_WITH_CONAN)
 ENDIF()
 
 #========= Find Packages =========================#
+#
+
+# SET(wxWidgets_USE_LIBS)
+set(wxWidgets_CONFIG_OPTIONS_DEFAULT "--toolkit=gtk3")
+
+find_package(wxWidgets COMPONENTS net gl core base REQUIRED)
+include( "${wxWidgets_USE_FILE}" )
+
+execute_process(COMMAND bash -c "wx-config --libs" 
+OUTPUT_VARIABLE wx_libraries)
+string(STRIP ${wx_libraries} wx_libraries)
+
+message([TRACE] " wx_libraries = ${wx_libraries}")
 
 
 #========== Target Configurations ================#
+#
 
 # <<--- Target: SingleFileApp - App with just a single file
 # ........................................................
-add_executable(simpleFileApp singleFileApp/main.cpp)
-# Note: It will link against all libraries imported in: conan_cmake_run 
-target_link_libraries(singleFileApp ${CONAN_LIBS})
+
+add_executable(singleFileApp singleFileApp/main.cpp)
+target_link_libraries(singleFileApp ${wx_libraries})
 copy_after_build(singleFileApp)
 
 
@@ -76,7 +90,9 @@ add_executable(sampleApp
                   sampleApp/wxwidgets_sampleMain.h
 	          sampleApp/wxwidgets_sampleApp.cpp
                   sampleApp/wxwidgets_sampleApp.h        
-             )
+                  )
+target_link_libraries(sampleApp ${wx_libraries})
+                
 # Note: It will link against all libraries imported in: conan_cmake_run 
-target_link_libraries(sampleApp ${CONAN_LIBS})
+#target_link_libraries(sampleApp ${CONAN_LIBS})
 copy_after_build(sampleApp)

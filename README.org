@@ -1,4 +1,5 @@
 * C++ CMake (+) Conan Project Templates 
+** Overview 
 
 This project many C++ CMake and Conan project templates which can make
 easier for creating new projects instead of starting everything from
@@ -115,3 +116,32 @@ Example:
  *Repository* 
  
  + https://github.com/caiorss/cpp-project-templates
+** Dependencies configuration 
+
+ *Conan* 
+
+Install Conan via PIP: 
+
+#+BEGIN_SRC sh 
+  $ pip install --user conan
+#+END_SRC
+
+After the installation of Conan, add the following repositories: 
+
+#+BEGIN_SRC sh 
+ $ conan remote add conan-center https://conan.bintray.com
+ $ conan remote add conan-community https://api.bintray.com/conan/conan-community/conan
+ $ conan remote add bincrafters https://api.bintray.com/conan/bincrafters/public-conan
+#+END_SRC
+
+ *Dependencies for WXWidgets projects on Fedora Linux* 
+
+#+BEGIN_SRC sh 
+ $ dnf install -y gtk2-devel.x86_64
+ $ dnf install -y gtk+extra-devel.x86_64
+ $ dnf install -y SDL-devel.x86_64
+ $ dnf install -y SDL2-devel.x86_64
+ $ dnf install -y libXtst-devel.x86_64
+ $ dnf install -y libXt-devel.x86_6
+ $ dnf install -y compat-wxGTK3-gtk2.x86_64
+#+END_SRC
