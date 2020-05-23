@@ -134,6 +134,12 @@ After the installation of Conan, add the following repositories:
  $ conan remote add bincrafters https://api.bintray.com/conan/bincrafters/public-conan
 #+END_SRC
 
+ *Dependencies for OpenGL projects on Fedora Linux* 
+
+#+BEGIN_SRC sh 
+ $ dnf install -y freeglut-devel gl-manpages.noarch 
+#+END_SRC
+
  *Dependencies for WXWidgets projects on Fedora Linux* 
 
 #+BEGIN_SRC sh 
