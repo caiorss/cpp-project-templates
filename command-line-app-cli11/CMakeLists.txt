@@ -2,7 +2,7 @@
 #
 #-----------------------------------------------------------
 cmake_minimum_required(VERSION 3.5)
-project(basic_boost_asio_server LANGUAGES CXX)
+project(command_line_app1 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -51,14 +51,6 @@ IF(BUILD_WITH_CONAN)
                       BASIC_SETUP
                       BUILD missing )
 ENDIF()
-
-#========= Find Packages =========================#
-
-# Set this option to ON for using static linking instead of dynamic
-# linking
-set(Boost_USE_STATIC_LIBS ON)
-
-find_package(Boost COMPONENTS system coroutine REQUIRED)
 
 #========== Target Configurations ================#
 
