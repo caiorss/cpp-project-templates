@@ -134,7 +134,19 @@ After the installation of Conan, add the following repositories:
  $ conan remote add bincrafters https://api.bintray.com/conan/bincrafters/public-conan
 #+END_SRC
 
- *Dependencies for OpenGL projects on Fedora Linux* 
+ *Dependency for Pybind11* (building Python Modules)
+
+  + Note: Anaconda or Miniconda Python distributions already comes
+    with Pythonb development headers or (SDK - Software Development
+    Kit). 
+
+#+BEGIN_SRC sh 
+  $ dnf install python3-devel 
+#+END_SRC 
+
+ *Dependencies for OpenGL projects* 
+
+Fedora Linux or Red-hat derivates: 
 
 #+BEGIN_SRC sh 
  $ dnf install -y freeglut-devel gl-manpages.noarch 
